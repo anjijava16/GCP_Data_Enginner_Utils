@@ -1,7 +1,20 @@
+git Clone Steps:
+------------------------------
+
+
 Copy Files From Local FS to GCS
 ---------------------------------------
-gsutil cp input.csv gs://$BUCKET_ID/
+gsutil cp input.csv gs://$BUCKET_NAME/
+gsutil cp spark_job.py gs://$BUCKET_NAME/
 
+
+How to Run the Pyspark job as Dataproc API
+----------------------------------------------
+### PySpark Job :
+gcloud dataproc jobs submit pyspark \
+    gs://BUCKET_NAME/spark_job.py \
+    --cluster=cluster-e350  \
+    --region=us-central1 
 
 
 
