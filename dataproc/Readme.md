@@ -1,8 +1,8 @@
 Getting Started With Git clone
 ===================================
 1. cd desktop
-2. git clone 
-3. cd GCP_Data_Enginner_Utils
+2. git clone https://github.com/anjijava16/GCP_Data_Enginner_Utils.git
+3. cd GCP_Data_Enginner_Utils/dataproc
 
 
 
