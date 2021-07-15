@@ -1,5 +1,9 @@
-git Clone Steps:
-------------------------------
+Getting Started With Git clone
+===================================
+1. cd desktop
+2. git clone 
+3. cd GCP_Data_Enginner_Utils
+
 
 
 Copy Files From Local FS to GCS
