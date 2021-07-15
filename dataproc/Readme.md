@@ -8,8 +8,8 @@ Getting Started With Git clone
 
 Copy Files From Local FS to GCS
 ---------------------------------------
-gsutil cp input.csv gs://$BUCKET_NAME/
-gsutil cp spark_job.py gs://$BUCKET_NAME/
+1.  gsutil cp input.csv gs://$BUCKET_NAME/
+2.  gsutil cp spark_job.py gs://$BUCKET_NAME/
 
 
 How to Run the Pyspark job as Dataproc API
