@@ -15,10 +15,8 @@ Copy Files From Local FS to GCS
 How to Run the Pyspark job as Dataproc API
 ----------------------------------------------
 ### PySpark Job :
-gcloud dataproc jobs submit pyspark \
-    gs://BUCKET_NAME/spark_job.py \
-    --cluster=cluster-e350  \
-    --region=us-central1 
+gcloud dataproc jobs submit pyspark  gs://BUCKET_NAME/spark_job.py --cluster=cluster-e350 --region=us-central1 
 
+### Note in the above pyspark change cluser name and region (based on the dataproc cluster creation)
 
 
