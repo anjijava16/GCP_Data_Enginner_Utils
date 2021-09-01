@@ -1,0 +1,45 @@
+Cloud Spanner : Migratting a database to Cloud Spanner the current model uses auto increment values as Primary Key .
+YOu need to keep those values but don't want to use them as Primary Key.?
+How Could you create Primary Key that does not use an auto-increment value?
+Ans:
+   Use a Hash function value of the auto-increment value
+   use binary reversed value of the value .
+   
+   
+Cloud Firestore:
+  *. Managed NOSQL database
+  *. Uses the document models
+      *. Key-value pairs
+	  *. Hierarchical
+  Two models   
+        Native mode
+		Datastore mode
+
+
+Choosing a Mode:
+   DataStore Mode 
+       *. Backend for Server applications
+	   *. Does not require synsching with model device
+	
+   Native Mode
+    Used with mobile & web applications
+    Supports large number of connections
+    Mobile and web clients 
+
+
+
+https://github.com/GoogleCloudPlatform/bigquery-oreilly-book
+
+https://github.com/GoogleCloudPlatform/ml-design-patterns
+
+https://wilsonmar.github.io/gcp/
+
+
+https://codelabs.developers.google.com/codelabs/cbt-for-cassandra#0
+
+
+https://codelabs.developers.google.com/
+	
+	
+https://github.com/MartinHeinz
+

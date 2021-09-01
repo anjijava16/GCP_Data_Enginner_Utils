@@ -1,0 +1,85 @@
+student-04-d7c09b79e228@training-vm:~$ more /training/project_env.sh 
+#! /bin/bash
+
+# Create the DEVSHELL_PROJECT_ID on a VM
+curl "http://metadata.google.internal/computeMetadata/v1/project/project-id" -H "Metadata-Flavor: Google" > Project_ID
+awk '{print "export DEVSHELL_PROJECT_ID=" $0, "\n" "export BUCKET=" $0, "\n" "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" }' Project_ID > env.txt
+source env.txt
+echo $DEVSHELL_PROJECT_ID
+
+
+student-04-d7c09b79e228@training-vm:~$ more /training/sensor_magic.sh 
+#! /bin/bash
+
+# User tasks:
+#  1. copy repo to ~/training-data-analyst
+#  2. create $DEVSHELL_PROJECT_ID
+#
+# Install PIP
+# sudo apt-get install -y python-pip
+# Use PIP to install pubsub API
+# sudo pip install -U google-cloud-pubsub
+# Download the data file
+gsutil cp gs://cloud-training-demos/sandiego/sensor_obs2008.csv.gz ~/training-data-analyst/courses/streaming/publish/
+# cd to directory
+cd ~/training-data-analyst/courses/streaming/publish/
+# Run sensor simulator
+python3 ./send_sensor_data.py --speedFactor=60 --project $DEVSHELL_PROJECT_ID
+student-04-d7c09b79e228@training-vm:~$ 
+
+
+python3 ./send_sensor_data.py --speedFactor=60 --project $DEVSHELL_PROJECT_ID
+student-04-d7c09b79e228@training-vm:~$ more /training/bq_magic.sh 
+#! /bin/bash
+
+bq mk --dataset $DEVSHELL_PROJECT_ID:demos
+
+bq load --skip_leading_rows=1 --source_format=CSV demos.average_speeds gs://cloud-training/gcpdei/results-20180608-102960.csv timestamp:TIMESTAMP,latitude:FLOAT,longitude:FLOAT,highway:STRING,dire
+ction:STRING,lane:INTEGER,speed:FLOAT,sensorId:STRING
+bq load --skip_leading_rows=1 --source_format=CSV demos.current_conditions gs://cloud-training/gcpdei/results-20180608-102960.csv timestamp:TIMESTAMP,latitude:FLOAT,longitude:FLOAT,highway:STRING,
+direction:STRING,lane:INTEGER,speed:FLOAT,sensorId:STRING
+student-04-d7c09b79e228@training-vm:~$ 
+
+
+Project_ID= qwiklabs-gcp-04-af74b2c245bd
+Instance_id=cpb210
+table_name=current_conditions
+
+https://googleapis.com/bigtable/projects/qwiklabs-gcp-04-af74b2c245bd/instances/cpb210/tables/current_conditions
+
+
+bq mk \
+--external_table_definition=https://googleapis.com/bigtable/projects/qwiklabs-gcp-04-af74b2c245bd/instances/cpb210/tables/current_conditions \
+demos.welcome_cond
+
+
+create 'customer_offers','cf1','of1'
+
+hbase(main):016:0> put 'customer_offers','ajdfaji123','cf1:name','anji'
+hbase(main):017:0> put 'customer_offers','ajdfaji123','cf1:id','10'
+scan 'customer_offers'
+
+put 'customer_offers','ajdfaji123','of1:offer_id','100'
+
+hbase(main):012:0> scan 'current_conditions', {'LIMIT' => 1}
+ROW                                                COLUMN+CELL                                                                                                                                      
+ 15#S#1#9223370811226375807                        column=lane:direction, timestamp=1225628400, value=S                                                                                             
+ 15#S#1#9223370811226375807                        column=lane:highway, timestamp=1225628400, value=15                                                                                              
+ 15#S#1#9223370811226375807                        column=lane:lane, timestamp=1225628400, value=1.0                                                                                                
+ 15#S#1#9223370811226375807                        column=lane:latitude, timestamp=1225628400, value=32.706184                                                                                      
+ 15#S#1#9223370811226375807                        column=lane:longitude, timestamp=1225628400, value=-117.120565                                                                                   
+ 15#S#1#9223370811226375807                        column=lane:sensorId, timestamp=1225628400, value=32.706184,-117.120565,15,S,1                                                                   
+ 15#S#1#9223370811226375807                        column=lane:speed, timestamp=1225628400, value=72.3                                                                                              
+ 15#S#1#9223370811226375807                        column=lane:timestamp, timestamp=1225628400, value=2008-11-02 12:20:00                                                                           
+1 row(s) in 0.1530 seconds
+
+hbase(main):013:0> 
+
+
+
+
+Equivalent gcloud command line
+This is the gcloud command line with the parameters you have selected.
+
+    
+gcloud dataflow jobs run cloud-bigtable-export-sandiego-current_conditions --gcs-location gs://dataflow-templates-us-central1/latest/Cloud_Bigtable_to_GCS_Avro --region us-central1 --staging-location gs://gcs_temp_anji/temp --parameters bigtableProjectId=qwiklabs-gcp-04-af74b2c245bd,bigtableInstanceId=sandiego,bigtableTableId=current_conditions,outputDirectory=gs://gcs_temp_anji/output,filenamePrefix=cloud-bigtable-sandiego-current_conditions

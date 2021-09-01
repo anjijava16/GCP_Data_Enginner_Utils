@@ -1,0 +1,376 @@
+
+
+======================= Module 3 command line ==================
+
+>> Dataset = Women's E Commerce clothing reviews (https://www.kaggle.com/nicapotato/womens-ecommerce-clothing-reviews)
+
+Use this command to see whether your default project has any existing datasets.
+- bq ls
+
+checking dataset in any other project
+- bq ls project-id:
+
+Use this command to create a new dataset
+- bq mk dataset-name
+
+To check whether dataset is created or not
+- bq ls
+
+To load any dataset in a table of the newly created dataset
+- bq load dataset-name.table data.txt schema 
+- bq load --autodetect clothing_reviews.reviews reviews.csv
+
+you can check the details of table created
+- bq show dataset.table
+- bq show clothing_reviews.reviews
+
+query the table
+- bq query "your query"
+- bq query "SELECT Class_Name,Rating FROM clothing_reviews.reviews  WHERE Age < 25 ORDER BY Rating ASC"
+- bq query "SELECT Class_Name,AVG(Rating) as avg_rating FROM clothing_reviews.reviews  WHERE Age > 25 GROUP BY Class_Name ORDER BY avg_rating ASC"
+
+
+
+======================Module 3 Web UI ==================================
+
+- bq query "SELECT Class_Name,AVG(Rating) as avg_rating FROM clothing_reviews.reviews  WHERE Age < 25 GROUP BY Class_Name ORDER BY avg_rating ASC"
+
+
+
+================= Module 4 Logistic Regression =========================
+
+>> Dataset = mushroom dataset https://archive.ics.uci.edu/ml/datasets/mushroom
+
+>> Creaing Model 
+
+CREATE MODEL
+  `spikey_mushroom.spikey_model`
+OPTIONS
+  (model_type='logistic_reg',
+    input_label_cols=['CLASS'],
+    max_iterations = 10) AS
+SELECT
+  *
+FROM
+  `spikey-bq.spikey_mushroom.train`
+
+>> Evaluating Model
+
+SELECT
+  *
+FROM
+  ML.EVALUATE(MODEL `spikey_mushroom.spikey_model`,
+    (
+  SELECT
+    *
+  FROM
+    `spikey-bq.spikey_mushroom.test`),
+    STRUCT(0.55 AS threshold))
+
+>> Prediction
+
+We used train data only to get comparable data
+
+SELECT
+  class,
+  predicted_class,
+  predicted_class_probs
+FROM
+  ML.PREDICT(MODEL `spikey_mushroom.spikey_model`,
+    (
+    SELECT
+      * 
+    FROM
+      `spikey-bq.spikey_mushroom.train`))
+
+
+============================== Module 4 Linear Regression ========================
+
+>> Dataset = automobile mpg dataset (https://archive.ics.uci.edu/ml/datasets/auto+mpg)
+
+>> Create Model
+
+CREATE MODEL `spikey_automobile_mpg.spikey_model`
+OPTIONS
+  (model_type='linear_reg',
+    input_label_cols=['mpg'],
+    data_split_method='random',
+    data_split_eval_fraction=0.3) AS
+SELECT 
+  mpg, cylinders, displacement, horsepower,
+  weight, acceleration, model_year, origin
+FROM
+  `spikey-bq.spikey_automobile_mpg.train`
+LIMIT
+  1000
+
+>> Evaluation
+
+SELECT *
+FROM
+  ML.EVALUATE(MODEL `spikey_automobile_mpg.spikey_model`,
+    (
+   SELECT 
+      mpg, cylinders, displacement, horsepower,
+      weight, acceleration, model_year, origin
+    FROM
+      `spikey-bq.spikey_automobile_mpg.test`))
+>> Prediction
+
+SELECT
+  *
+FROM
+  ML.PREDICT(MODEL `spikey_automobile_mpg.spikey_model`,
+    (
+   SELECT 
+      mpg, cylinders, displacement, horsepower,
+      weight, acceleration, model_year, origin
+    FROM
+      `spikey-bq.spikey_automobile_mpg.test`))
+
+
+========================== Module 5 ====================================
+
+
+Get the latest gcloud command.
+- gcloud components update
+
+Install the gcloud datalab component.
+- gcloud components install datalab
+
+Create a Cloud Datalab instance
+- datalab create datalab-instance-name
+- datalab create spikey-datalab
+
+To connect this datalab instance 
+-datalab connect spikey-datalab
+
+Run following commands first in notebook so that we can run sql commands in notebook
+
+-!pip install --upgrade google-cloud-bigquery
+from google.cloud import bigquery
+client = bigquery.Client()
+-%load_ext google.cloud.bigquery
+
+
+>> Dataset = automobile rate dataset (https://www.kaggle.com/toramky/automobile-dataset)
+
+
+>> Create Model
+
+%%bigquery
+CREATE OR REPLACE MODEL `spikey_automobile_price.spikey_model`
+OPTIONS
+  (model_type='linear_reg',
+    input_label_cols=['price']) AS
+SELECT
+  * EXCEPT (engine_location)
+FROM
+  `spikey-bq.spikey_automobile_price.train`
+WHERE
+  price IS NOT NULL
+  AND normalized_losses IS NOT NULL
+  AND num_of_doors IS NOT NULL
+  AND bore IS NOT NULL
+  AND stroke IS NOT NULL
+  AND horsepower IS NOT NULL
+  AND peak_rpm IS NOT NULL
+
+
+>> Describing features
+
+%%bigquery
+SELECT
+  *
+FROM
+  ML.FEATURE_INFO(MODEL `spikey-bq.spikey_automobile_price.spikey_model`)
+
+>> Getting training info
+
+%%bigquery
+SELECT
+  *
+FROM
+  ML.TRAINING_INFO(MODEL `spikey-bq.spikey_automobile_price.spikey_model`)
+
+>> Evaluate model
+
+%%bigquery
+SELECT
+  *
+FROM
+  ML.Evaluate(MODEL spikey_automobile_price.spikey_model,
+    (
+    SELECT
+      * EXCEPT (engine_location)
+    FROM
+      `spikey-bq.spikey_automobile_price.test`
+    WHERE
+      price IS NOT NULL
+      AND normalized_losses IS NOT NULL
+      AND num_of_doors IS NOT NULL
+      AND bore IS NOT NULL
+      AND stroke IS NOT NULL
+      AND horsepower IS NOT NULL
+      AND peak_rpm IS NOT NULL))
+
+>> Prediction
+
+%%bigquery
+SELECT
+  predicted_price,
+  price
+FROM
+  ML.PREDICT(MODEL spikey_automobile_price.spikey_model,
+    (
+    SELECT
+      * EXCEPT (engine_location)
+    FROM
+      `spikey-bq.spikey_automobile_price.test`
+    WHERE
+      price IS NOT NULL
+      AND normalized_losses IS NOT NULL
+      AND num_of_doors IS NOT NULL
+      AND bore IS NOT NULL
+      AND stroke IS NOT NULL
+      AND horsepower IS NOT NULL
+      AND peak_rpm IS NOT NULL))
+
+>> Getting feature weights used for prediction
+
+%%bigquery
+SELECT
+  processed_input,
+  weight
+FROM (
+  SELECT
+    *
+  FROM
+    ML.WEIGHTS(MODEL `spikey_automobile_price.spikey_model`))
+
+
+
+logistic regression dataset = adult salary https://archive.ics.uci.edu/ml/datasets/adult
+
+
+>> Create Model
+
+%%bigquery
+CREATE OR REPLACE MODEL `customer_personal_data.spikey_model`
+OPTIONS
+  (model_type='logistic_reg',
+    input_label_cols=['income'],
+    ls_init_learn_rate=.15,
+    data_split_method='custom',
+    data_split_col='split_col') AS
+SELECT
+  age,
+  workclass,
+  fnlwgt,
+  education_num,
+  marital_status,
+  occupation,
+  race,
+  sex,
+  hours_per_week,
+  income,
+  split_col
+FROM
+  `spikey-bq.customer_personal_data.train`
+
+>> Getting features info
+
+%%bigquery
+SELECT
+  *
+FROM
+  ML.FEATURE_INFO(MODEL `spikey-bq.customer_personal_data.spikey_model`)
+
+
+>> Getting training info
+
+%%bigquery
+SELECT
+  *
+FROM
+  ML.TRAINING_INFO(MODEL `spikey-bq.customer_personal_data.spikey_model`)
+
+>> Evaluation using ROC Curve
+
+%%bigquery
+SELECT
+  *
+FROM
+  ML.ROC_CURVE(MODEL customer_personal_data.spikey_model,
+    (
+    SELECT
+      age,
+      workclass,
+      fnlwgt,
+      education_num,
+      marital_status,
+      occupation,
+      race,
+      sex,
+      hours_per_week,
+      income
+    FROM
+      `customer_personal_data.test`))
+
+
+>> Prediction
+
+%%bigquery
+SELECT
+  predicted_income,
+  income
+FROM
+  ML.PREDICT(MODEL customer_personal_data.spikey_model,
+    (
+    SELECT
+      age,
+      workclass,
+      fnlwgt,
+      education_num,
+      marital_status,
+      occupation,
+      race,
+      sex,
+      hours_per_week,
+      income
+    FROM
+      `customer_personal_data.test`))
+
+>> Weights used for prediction
+
+%%bigquery
+SELECT
+  processed_input,
+  weight
+FROM (
+  SELECT
+    *
+  FROM
+    ML.WEIGHTS(MODEL `customer_personal_data.spikey_model`))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

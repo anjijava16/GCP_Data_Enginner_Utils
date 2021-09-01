@@ -1,0 +1,86 @@
+
+1. gsutil ls gs://goog-dataproc-initialization-actions-us-central1/
+2. gs://spark-lib/
+3. https://cloud.google.com/dataproc/docs/tutorials/bigquery-connector-spark-example#pyspark
+4. gs://cloud-samples-data/bigquery/us-states/us-states.csv
+
+https://medium.com/google-cloud/apache-spark-and-jupyter-notebooks-made-easy-with-dataproc-component-gateway-fa91d48d6a5a
+https://github.com/tthustla/pyspark_sa_gcp
+
+
+String datasetName = "MY_DATASET_NAME";
+String tableName = "MY_TABLE_NAME";
+String sourceUri = "gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/*";
+String sourceUriPrefix =
+"gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/{pkey:STRING}/";
+setHivePartitioningOptions(datasetName, tableName, sourceUriPrefix, sourceUri);
+}
+
+
+gs://goog-dataproc-initialization-actions-us-central1/.gitignore
+gs://goog-dataproc-initialization-actions-us-central1/BUILD
+gs://goog-dataproc-initialization-actions-us-central1/CONTRIBUTING.md
+gs://goog-dataproc-initialization-actions-us-central1/LICENSE
+gs://goog-dataproc-initialization-actions-us-central1/README.md
+gs://goog-dataproc-initialization-actions-us-central1/WORKSPACE
+gs://goog-dataproc-initialization-actions-us-central1/alluxio_$folder$
+gs://goog-dataproc-initialization-actions-us-central1/favicon.ico
+gs://goog-dataproc-initialization-actions-us-central1/h2o_$folder$
+gs://goog-dataproc-initialization-actions-us-central1/jupyter_sparkmonitor_$folder$
+gs://goog-dataproc-initialization-actions-us-central1/knox_$folder$
+gs://goog-dataproc-initialization-actions-us-central1/push-to-gcs.sh
+gs://goog-dataproc-initialization-actions-us-central1/alluxio/
+gs://goog-dataproc-initialization-actions-us-central1/apache-zeppelin/
+gs://goog-dataproc-initialization-actions-us-central1/atlas/
+gs://goog-dataproc-initialization-actions-us-central1/beam/
+gs://goog-dataproc-initialization-actions-us-central1/bigdl/
+gs://goog-dataproc-initialization-actions-us-central1/bigtable/
+gs://goog-dataproc-initialization-actions-us-central1/cloud-sql-proxy/
+gs://goog-dataproc-initialization-actions-us-central1/cloudbuild/
+gs://goog-dataproc-initialization-actions-us-central1/conda/
+gs://goog-dataproc-initialization-actions-us-central1/connectors/
+gs://goog-dataproc-initialization-actions-us-central1/dask/
+gs://goog-dataproc-initialization-actions-us-central1/datalab/
+gs://goog-dataproc-initialization-actions-us-central1/docker/
+gs://goog-dataproc-initialization-actions-us-central1/dr-elephant/
+gs://goog-dataproc-initialization-actions-us-central1/drill/
+gs://goog-dataproc-initialization-actions-us-central1/flink/
+gs://goog-dataproc-initialization-actions-us-central1/ganglia/
+gs://goog-dataproc-initialization-actions-us-central1/gcs_updater/
+gs://goog-dataproc-initialization-actions-us-central1/gobblin/
+gs://goog-dataproc-initialization-actions-us-central1/gpu/
+gs://goog-dataproc-initialization-actions-us-central1/h2o/
+gs://goog-dataproc-initialization-actions-us-central1/hbase/
+gs://goog-dataproc-initialization-actions-us-central1/hive-hcatalog/
+gs://goog-dataproc-initialization-actions-us-central1/horovod/
+gs://goog-dataproc-initialization-actions-us-central1/hue/
+gs://goog-dataproc-initialization-actions-us-central1/integration_tests/
+gs://goog-dataproc-initialization-actions-us-central1/ipython-notebook/
+gs://goog-dataproc-initialization-actions-us-central1/jupyter/
+gs://goog-dataproc-initialization-actions-us-central1/jupyter2/
+gs://goog-dataproc-initialization-actions-us-central1/jupyter_sparkmonitor/
+gs://goog-dataproc-initialization-actions-us-central1/kafka/
+gs://goog-dataproc-initialization-actions-us-central1/knox/
+gs://goog-dataproc-initialization-actions-us-central1/list-consistency-cache/
+gs://goog-dataproc-initialization-actions-us-central1/livy/
+gs://goog-dataproc-initialization-actions-us-central1/mlvm/
+gs://goog-dataproc-initialization-actions-us-central1/oozie/
+gs://goog-dataproc-initialization-actions-us-central1/openssl/
+gs://goog-dataproc-initialization-actions-us-central1/post-init/
+gs://goog-dataproc-initialization-actions-us-central1/presto/
+gs://goog-dataproc-initialization-actions-us-central1/prometheus/
+gs://goog-dataproc-initialization-actions-us-central1/python/
+gs://goog-dataproc-initialization-actions-us-central1/ranger/
+gs://goog-dataproc-initialization-actions-us-central1/rapids/
+gs://goog-dataproc-initialization-actions-us-central1/rstudio/
+gs://goog-dataproc-initialization-actions-us-central1/solr/
+gs://goog-dataproc-initialization-actions-us-central1/spark-nlp/
+gs://goog-dataproc-initialization-actions-us-central1/sqoop/
+gs://goog-dataproc-initialization-actions-us-central1/stackdriver/
+gs://goog-dataproc-initialization-actions-us-central1/starburst-presto/
+gs://goog-dataproc-initialization-actions-us-central1/tez/
+gs://goog-dataproc-initialization-actions-us-central1/tony/
+gs://goog-dataproc-initialization-actions-us-central1/user-environment/
+gs://goog-dataproc-initialization-actions-us-central1/util/
+gs://goog-dataproc-initialization-actions-us-central1/zeppelin/
+gs://goog-dataproc-initialization-actions-us-central1/zookeeper/

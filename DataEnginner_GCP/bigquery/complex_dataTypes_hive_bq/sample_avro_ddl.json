@@ -1,0 +1,199 @@
+{
+  "columns": [
+    {
+      "name": "location",
+      "type": "string",
+      "comment": ""
+    },
+    {
+      "name": "month",
+      "type": "string",
+      "comment": ""
+    },
+    {
+      "name": "number_of_orders",
+      "type": "int",
+      "comment": ""
+    },
+    {
+      "name": "total_sales",
+      "type": "double",
+      "comment": ""
+    }
+  ],
+  "tableInfo": {
+    "tableName": "sales_info_avro",
+    "dbName": "iwinner_db",
+    "owner": "mamathamams39",
+    "createTime": 1628133427,
+    "lastAccessTime": 0,
+    "retention": 0,
+    "sd": {
+      "cols": [
+        {
+          "name": "location",
+          "type": "string",
+          "comment": null,
+          "setName": true,
+          "setType": true,
+          "setComment": false
+        },
+        {
+          "name": "month",
+          "type": "string",
+          "comment": null,
+          "setName": true,
+          "setType": true,
+          "setComment": false
+        },
+        {
+          "name": "number_of_orders",
+          "type": "int",
+          "comment": null,
+          "setName": true,
+          "setType": true,
+          "setComment": false
+        },
+        {
+          "name": "total_sales",
+          "type": "double",
+          "comment": null,
+          "setName": true,
+          "setType": true,
+          "setComment": false
+        }
+      ],
+      "location": "gs://dev-iwinner-data-july04/hive_data/avro",
+      "inputFormat": "org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat",
+      "outputFormat": "org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat",
+      "compressed": false,
+      "numBuckets": -1,
+      "serdeInfo": {
+        "name": null,
+        "serializationLib": "org.apache.hadoop.hive.serde2.avro.AvroSerDe",
+        "parameters": {
+          "serialization.format": "1"
+        },
+        "description": null,
+        "serializerClass": null,
+        "deserializerClass": null,
+        "serdeType": null,
+        "setName": false,
+        "parametersSize": 1,
+        "setDescription": false,
+        "setParameters": true,
+        "setSerializationLib": true,
+        "setSerializerClass": false,
+        "setDeserializerClass": false,
+        "setSerdeType": false
+      },
+      "bucketCols": [],
+      "sortCols": [],
+      "parameters": {},
+      "skewedInfo": {
+        "skewedColNames": [],
+        "skewedColValues": [],
+        "skewedColValueLocationMaps": {},
+        "setSkewedColNames": true,
+        "setSkewedColValues": true,
+        "setSkewedColValueLocationMaps": true,
+        "skewedColNamesSize": 0,
+        "skewedColNamesIterator": [],
+        "skewedColValuesSize": 0,
+        "skewedColValuesIterator": [],
+        "skewedColValueLocationMapsSize": 0
+      },
+      "storedAsSubDirectories": false,
+      "parametersSize": 0,
+      "setParameters": true,
+      "colsIterator": [
+        {
+          "name": "location",
+          "type": "string",
+          "comment": null,
+          "setName": true,
+          "setType": true,
+          "setComment": false
+        },
+        {
+          "name": "month",
+          "type": "string",
+          "comment": null,
+          "setName": true,
+          "setType": true,
+          "setComment": false
+        },
+        {
+          "name": "number_of_orders",
+          "type": "int",
+          "comment": null,
+          "setName": true,
+          "setType": true,
+          "setComment": false
+        },
+        {
+          "name": "total_sales",
+          "type": "double",
+          "comment": null,
+          "setName": true,
+          "setType": true,
+          "setComment": false
+        }
+      ],
+      "setCols": true,
+      "setLocation": true,
+      "setInputFormat": true,
+      "setSerdeInfo": true,
+      "setOutputFormat": true,
+      "setBucketCols": true,
+      "setSortCols": true,
+      "setSkewedInfo": true,
+      "setCompressed": true,
+      "setNumBuckets": true,
+      "bucketColsSize": 0,
+      "bucketColsIterator": [],
+      "sortColsIterator": [],
+      "sortColsSize": 0,
+      "setStoredAsSubDirectories": true,
+      "colsSize": 4
+    },
+    "partitionKeys": [],
+    "parameters": {
+      "transient_lastDdlTime": "1628133463",
+      "bucketing_version": "2",
+      "totalSize": "673",
+      "EXTERNAL": "TRUE",
+      "numFiles": "1"
+    },
+    "viewOriginalText": null,
+    "viewExpandedText": null,
+    "tableType": "EXTERNAL_TABLE",
+    "privileges": null,
+    "temporary": false,
+    "rewriteEnabled": false,
+    "creationMetadata": null,
+    "catName": "hive",
+    "ownerType": "USER",
+    "partitionKeysSize": 0,
+    "setCatName": true,
+    "setSd": true,
+    "setPrivileges": false,
+    "setCreateTime": true,
+    "setLastAccessTime": true,
+    "parametersSize": 5,
+    "setOwner": true,
+    "setParameters": true,
+    "setTableName": true,
+    "setDbName": true,
+    "setPartitionKeys": true,
+    "partitionKeysIterator": [],
+    "setViewOriginalText": false,
+    "setViewExpandedText": false,
+    "setTableType": true,
+    "setCreationMetadata": false,
+    "setOwnerType": true,
+    "setRetention": true,
+    "setTemporary": false,
+    "setRewriteEnabled": true
+  }
+}   

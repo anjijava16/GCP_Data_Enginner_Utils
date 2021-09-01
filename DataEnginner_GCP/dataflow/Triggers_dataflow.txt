@@ -1,0 +1,23 @@
+Triggers
+When collecting and grouping data into windows, Beam uses triggers to determine when to emit the aggregated results of each window (referred to as a pane). If you use Beam’s default windowing configuration and default trigger, Beam outputs the aggregated result when it estimates all data has arrived, and discards all subsequent data for that window.
+
+You can set triggers for your PCollections to change this default behavior. Beam provides a number of pre-built triggers that you can set:
+
+Event time triggers. These triggers operate on the event time, as indicated by the timestamp on each data element. Beam’s default trigger is event time-based.
+Processing time triggers. These triggers operate on the processing time – the time when the data element is processed at any given stage in the pipeline.
+Data-driven triggers. These triggers operate by examining the data as it arrives in each window, and firing when that data meets a certain property. Currently, data-driven triggers only support firing after a certain number of data elements.
+Composite triggers. These triggers combine multiple triggers in various ways.
+At a high level, triggers provide two additional capabilities compared to simply outputting at the end of a window:
+
+Triggers allow Beam to emit early results, before all the data in a given window has arrived. For example, emitting after a certain amount of time elapses, or after a certain number of elements arrives.
+Triggers allow processing of late data by triggering after the event time watermark passes the end of the window.
+These capabilities allow you to control the flow of your data and balance between different factors depending on your use case:
+
+Completeness: How important is it to have all of your data before you compute your result?
+Latency: How long do you want to wait for data? For example, do you wait until you think you have all data? Do you process data as it arrives?
+Cost: How much compute power/money are you willing to spend to lower the latency?
+For example, a system that requires time-sensitive updates might use a strict time-based trigger that emits a window every N seconds, valuing promptness over data completeness. A system that values data completeness more than the exact timing of results might choose to use Beam’s default trigger, which fires at the end of the window.
+
+You can also set a trigger for an unbounded PCollection that uses a single global window for its windowing function. This can be useful when you want your pipeline to provide periodic updates on an unbounded data set — for example, a running average of all data provided to the present time, updated every N seconds or every N elements.
+
+9.1. Event time trigge

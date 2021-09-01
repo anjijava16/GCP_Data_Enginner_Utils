@@ -1,0 +1,957 @@
+Architecure: https://cloud.google.com/blog/products/data-analytics/new-blog-series-bigquery-explained-overview
+Storage & Partitons: https://cloud.google.com/blog/topics/developers-practitioners/bigquery-explained-storage-overview
+Data Ingestion: https://cloud.google.com/blog/topics/developers-practitioners/bigquery-explained-data-ingestion
+
+IMP Links:GITHUB:
+  1.  https://github.com/siddd88/google-cloud
+  2. https://github.com/BoningZhang/GCP_PubSub_example/blob/master/service.py
+  3. https://stevenlevine.dev/2019/11/querying-externally-partitioned-data-with-bq/
+  4. https://cloud.google.com/blog/products/data-analytics/keep-parquet-and-orc-from-the-data-graveyard-with-new-bigquery-features
+  5. https://github.com/BoningZhang/Learning_Airflow/blob/master/common/utils/gcp_utils.py
+https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=github_repos&t=commits&page=table&project=iwinnertech-1111
+https://codelabs.developers.google.com/codelabs/bigquery-cli/#7
+https://codelabs.developers.google.com/codelabs/bigquery-github#5
+
+
+https://github.com/GoogleCloudDataproc/cloud-dataproc/blob/master/codelabs/spark-bigquery/backfill.py
+https://www.adaltas.com/en/2019/11/22/bigquery-insert-complex-column/
+https://www.linkedin.com/in/darsh-shukla/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAClppTsBzXy0HestprkJv05nxnNOo-LpntA  (Airflow Exam)
+
+https://medium.com/google-cloud/bigquery-explained-data-ingestion-cdc26a588d0
+https://medium.com/google-cloud/bigquery-explained-storage-overview-70cac32251fa
+Java GitHUB BIGQUERY : https://github.com/ksree/gcp-connectors
+
+
+# BigQuery DWH :
+https://cloudonair.withgoogle.com/events/cloud-onboard-data-fundamentals?mkt_tok=eyJpIjoiTURZNVl6UTRPVFZpTlRVeSIsInQiOiJWeEpZdkxjMlMrWXFcL1pcL3lhenZYcmZZM0Z6RVFSTXEyMmNBbHJLODdkZ0NuMmVSTWVYN2JmeXVqbTJBbm5lVlR6bTAzZVNzeVB1ZmhGUDQ4WFpteUR3Q2JhVmxIblR0d3pidGIyWnpvSnZGQ0kwaTZ3RFVpelRtM2JzYkFHU1NpIn0%3D
+
+
+
+
+https://cloud.google.com/bigquery/streaming-data-into-bigquery#bigquery_table_insert_rows-python
+
+https://codelabs.developers.google.com/codelabs/gcp-bq-partitioning-and-clustering/#6
+https://hackersandslackers.com/google-bigquery-python/
+https://github.com/toddbirchard
+https://blog.morizyun.com/python/library-bigquery-google-cloud.html
+
+//
+
+https://cloud.google.com/blog/products/data-analytics/new-blog-series-bigquery-explained-overview
+https://cloud.google.com/blog/topics/developers-practitioners/bigquery-explained-querying-your-data
+
+
+GCP Real time Project :
+------------------------------------
+https://github.com/tuanchris/cloud-data-lake
+https://github.com/omidvd79/Big_Data_Demystified
+https://www.mydataschool.com/tutDatawarehouseBigQuery-2.html
+https://chartio.com/resources/tutorials/how-to-create-a-table-from-a-query-in-google-bigquery/
+https://github.com/hackersandslackers/bigquery-python-tutorial
+Game Of Throne Project: https://github.com/TDehaene/blogposts
+https://towardsdatascience.com/game-of-thrones-twitter-sentiment-with-keras-apache-beam-bigquery-and-pubsub-382a770f6583
+
+Pubsub ---> DataFlow ---> BigQuery : https://github.com/maryamhanifpour/pubsub2bqBeam
+https://github.com/kumar385/gcppubsub
+
+
+Coursera  
+https://github.com/jorwalk/data-engineering-gcp/blob/master/coursera/building-resilient-streaming-systems-gcp/Module%201:%20Architecture%20of%20Streaming%20Analytics%20Pipelines/01-what-is-streaming.md
+
+https://github.com/kanchantewary/learn-gcp/tree/master/notes/compute
+
+
+https://github.com/frontdatacloud/google_cloud_data_engineer/blob/master/1_Google_Cloud_Platform_Big_Data_and_Machine_Learning_Fundamentals.md
+
+
+Associate:
+https://www.udemy.com/course/google-certified-cloud-engineer-associate-training-hcc-gcp-eng-a-pe102/learn/lecture/11417284#overview
+0. https://github.com/sathishvj/awesome-gcp-certifications/blob/master/associate-cloud-engineer.md 
+1. https://github.com/anjijava16/Google-Cloud-Platform-Associate-Cloud-Engineer
+1. https://github.com/truar/gcp-learning
+    1. https://github.com/truar/gcp-learning/tree/master/gcp-study-guide-associate
+2. https://wilsonmar.github.io/gcp/
+https://acloud.guru/forums/gcp-certified-associate-cloud-engineer/discussion/-LHq7ia97ot7POrc6Nw7/exam_report_mega-thread
+1. https://yesdeepakverma.medium.com/how-i-cleared-all-3-google-cloud-certifications-in-3-weeks-f5591aa22572
+2. https://medium.com/@charles_j/how-i-passed-the-google-cloud-associate-engineer-certification-63a0fd932057
+3. https://medium.com/@fahed.dorgaa/i-have-passed-the-associate-cloud-engineer-exam-373076d07288
+4. https://medium.com/@fahed.dorgaa/notes-from-my-google-cloud-associate-cloud-engineer-section-2-5469797b1079
+
+Arch:
+-----------
+https://github.com/frontdatacloud/google_cloud_architect
+
+Cheatsheets:
+
+https://github.com/jorwalk/data-engineering-gcp/blob/master/study-guide.md
+https://github.com/ml874/Data-Engineering-on-GCP-Cheatsheet
+https://medium.com/google-cloud/a-tensorflow-glossary-cheat-sheet-382583b22932
+https://www.slideshare.net/GuangXu5/gcp-data-engineer-cheatsheet
+Other Exam Overviews/Debriefs:
+
+https://medium.com/@simonleewm/a-study-guide-to-the-google-cloud-professional-data-engineer-certification-path-9e83e41e311
+https://www.linkedin.com/pulse/google-cloud-certified-professional-data-engineer-writeup-rix/
+Courses:
+
+https://linuxacademy.com/google-cloud-platform/training/course/name/google-cloud-data-engineer
+https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam
+https://google.qwiklabs.com/quests/34
+https://google.qwiklabs.com/quests/25
+	
+	
+	
+https://gist.github.com/anonymous/657b5175b978cdc7dd0cba2b0d44ef77
+
+
+
+
+https://cloudonair.withgoogle.com/events/cloud-onboard-data-fundamentals?mkt_tok=eyJpIjoiTURZNVl6UTRPVFZpTlRVeSIsInQiOiJWeEpZdkxjMlMrWXFcL1pcL3lhenZYcmZZM0Z6RVFSTXEyMmNBbHJLODdkZ0NuMmVSTWVYN2JmeXVqbTJBbm5lVlR6bTAzZVNzeVB1ZmhGUDQ4WFpteUR3Q2JhVmxIblR0d3pidGIyWnpvSnZGQ0kwaTZ3RFVpelRtM2JzYkFHU1NpIn0%3D
+
+
+https://sametkaradag.medium.com/
+
+https://cloudonair.withgoogle.com/events/cloud-onboard-data-fundamentals?mkt_tok=eyJpIjoiTURZNVl6UTRPVFZpTlRVeSIsInQiOiJWeEpZdkxjMlMrWXFcL1pcL3lhenZYcmZZM0Z6RVFSTXEyMmNBbHJLODdkZ0NuMmVSTWVYN2JmeXVqbTJBbm5lVlR6bTAzZVNzeVB1ZmhGUDQ4WFpteUR3Q2JhVmxIblR0d3pidGIyWnpvSnZGQ0kwaTZ3RFVpelRtM2JzYkFHU1NpIn0%3D
+
+
+https://medium.com/google-cloud/how-to-de-duplicate-rows-in-a-bigquery-table-55f7d6321626
+
+https://programmaticponderings.com/2018/12/11/big-data-analytics-with-java-and-python-using-cloud-dataproc-googles-fully-managed-spark-and-hadoop-service/
+
+https://github.com/siddd88/gcp-data-engineering/blob/master/bigquery-sparksql-batch-etl/bigquery/load-tables-bash/load_csvs/load_csv_non-partitioned.sh
+
+https://medium.com/google-cloud/bigquery-explained-overview-357055ecfda3
+
+https://codelabs.developers.google.com/codelabs/pyspark-bigquery#9
+
+https://github.com/GoogleCloudDataproc/cloud-dataproc
+
+gs://cloud-samples-data/bigquery/us-states/us-states.csv
+
+# Hive to BigQuery Loader 
+https://github.com/GoogleCloudPlatform/professional-services/tree/master/tools/bigquery-hive-external-table-loader
+
+https://cloud.google.com/blog/products/data-analytics/new-blog-series-bigquery-explained-overview
+
+
+
+# Teradata to Bigquery:
+1.Accenture: https://www.accenture.com/_acnmedia/PDF-132/Accenture-Teradata-PoV-Executive-Summary-v2.pdf
+2. Impteus: https://www.impetus.com/system/files/IMP_SB_Automated_Teradata_Workload_Transformation_Apr_2019_0.pdf
+3. CoreCompete
+https://corecompete.com/teradata-migration-to-bigquery/
+
+
+Teradata to BigQuery schema converter: Convert your existing schema to BigQuery native data types and structures
+https://github.com/searceinc/BQconvert/blob/master/setup/bqconverter.py
+https://github.com/shinichi-takii/ddlparse
+
+
+###############################################
+
+
+Stage Layer < DataLake < DataMart < Report Layer 
+Partition: https://www.youtube.com/watch?v=l5I0knEcH4I
+
+BigQuery Partitions & Clusering:
+2.https://www.youtube.com/watch?v=wapi0aR4BZE
+
+
+WriteDisposition
+Describes whether a mutation to a table should overwrite or append.
+
+Enums
+WRITE_DISPOSITION_UNSPECIFIED	Unknown.
+WRITE_EMPTY	This job should only be writing to empty tables.
+WRITE_TRUNCATE	This job will truncate table data and write from the beginning.
+WRITE_APPEND	This job will append to a table.
+
+
+
+
+
+bq mk --table mydataset.mytable ./myschema.json
+
+
+
+bq query --nouse_legacy_sql "select 
+
+
+
+bq mk staging
+bq mk staging.stackoverflow-tbl create_table.json
+
+Partition in Bigquery:
+--------------------
+https://www.youtube.com/watch?v=A1-waXGIxBc
+https://www.qwiklabs.com/focuses/3694?parent=catalog
+
+Course:
+https://learn.codingisforlosers.com/courses/learn-bigquery-sql/250842-office-hours/722868-how-google-cloud-functions-et-al-fit-with-bigquery
+
+
+1: 30 Hours Course :
+https://www.youtube.com/watch?v=UPMH11BqvGs
+
+
+SELECT *  FROM `iwinner-data.staging.2_stackoverflow-tbl` LIMIT 1000
+
+
+
+
+CREATE OR REPLACE TABLE `iwinner-data.staging.2_stackoverflow-tbl_partitioned`
+PARTITION BY
+ DATE(Creation_data) AS
+SELECT
+ *
+FROM
+ `iwinner-data.staging.2_stackoverflow-tbl`
+ 
+ 
+ 
+ PARTITION BY expression must be DATE(<timestamp_column>), DATE(<datetime_column>), DATETIME_TRUNC(<datetime_column>, DAY/HOUR/MONTH/YEAR), a DATE column, TIMESTAMP_TRUNC(<timestamp_column>, DAY/HOUR/MONTH/YEAR), DATE_TRUNC(<date_column>, MONTH/YEAR), or RANGE_BUCKET(<int64_column>, GENERATE_ARRAY(<int64_value>, <int64_value>[, <int64_value>]))
+
+
+CREATE OR REPLACE TABLE `iwinner-data.stackoverflow.questions_2018` AS
+SELECT *
+FROM `bigquery-public-data.stackoverflow.posts_questions`
+WHERE creation_date BETWEEN '2018-01-01' AND '2018-07-01'
+
+
+ CREATE OR REPLACE TABLE `iwinner-data.staging.2_stackoverflow-tbl_partitioned`
+PARTITION BY
+ DATE(creation_date) AS
+SELECT
+ *
+FROM
+ `iwinner-data.stackoverflow.questions_2018`
+WHERE
+ creation_date BETWEEN '2018-01-01' AND '2018-07-01';
+Now let’s run the previous query on the partitioned table, with cache disabled, to fe
+
+
+
+SELECT *  FROM `iwinner-data.staging.2_stackoverflow-tbl` LIMIT 1000
+
+https://stackoverflow.com/questions/55836849/google-bigquery-write-truncate-erasing-all-data
+
+
+newtable_partition
+
+CREATE OR REPLACE TABLE `iwinner-data.staging.newtable_partition`
+PARTITION BY creation_data
+AS
+SELECT
+ *
+FROM
+ `iwinner-data.staging.2_stackoverflow-tbl`
+
+	
+
+bq rm -f -t iwinner-data:staging.newtable_partition$20190401
+bq query --use_legacy_sql=false "select * from iwinner-data.staging.newtable_partition"
+
+
+    {
+        "table_id": "dim_pgm",
+        "schema": "{}/ddl/datamart/dim_pgm.json".format(HOME),
+        "dataset_id": DAILY_DATASET_DATAMART,
+        "require_partition_filter": True,
+        "partition_field": "METERED_DATE"
+    },
+	
+	
+	      {
+        "mode": "NULLABLE", 
+        "name": "METERED_DATE", 
+        "type": "DATE"
+      }
+	  
+	  
+	  
+	  TimePartitioning(
+                field='METERED_DATE',
+                require_partition_filter=True)
+
+
+
+
+
+RawData: RDBS+SpreadSheet +OffLine Files + Other System and apps
+
+Data Processing: Data Proc +DataFlow 
+
+Machine Learning: Algorithm + Data + Predictive Insight + Decision
+--> Cloud TPU
+--> AI Platform
+--> TensorFlow
+--> Cloud AutoML
+--> ML APIS
+
+
+=================================
+GCS(Data Lake):
+
+Storage:
+   Cloud Storage
+   Cloud SQL: One Database Enough
+   Cloud Spanner: Horizotal Scalability
+   Cloud FireStore: NOSQL
+   MilliSeconds Latency : BigTable
+   Seconds : BigQuery  
+
+
+Raw Data --Replicate--- Data Lake -(ELT)-> Data Warehouse
+
+
+BigQuery Storage Service ----Petabit Network ---> Bigquery Query service 
+
+Project 
+  DataSet
+    Table 
+
+Columar Storage Compression Format
+
+Bulk Data Ingest 
+Stream Ingestion
+
+
+Bigquery Query Service:
+# StandardSQL
+ SELECT COUNT(*) as total_trips FROM `bigquery-public-data.san_francisco_bikeshare.bikeshare_trips`;
+
+================================
+
+CloudStorage,GDrive,
+Cloud DataFlow,CloudDataPrep,BigTable,  
+
+
+BigQuery Query Service:
+Job
+Servless,
+Slots: Slots are units of Processing resources
+
+
+BQ Slots ---> CPU+,RAM+,Network+
+
+Slots Requested:
+More Complex queries = More Slots Requested
+
+Slots Available:
+More Slots= Fast depletion rate
+More Concurrent queries = Slower depletion Rate
+
+How many services Comprise BigQuery?
+ANs: 2
+ 1. BigQuery Engine
+ 2. BigQUery Storage
+==========================================
+BigQuery Performance:
+
+
+
+
+
+
+
+
+CREATE SET TABLE Orders (
+   StoreNo SMALLINT, 
+   OrderNo INTEGER, 
+   OrderDate DATE FORMAT 'YYYY-MM-DD', 
+   OrderTotal INTEGER 
+) 
+PRIMARY INDEX(OrderNo) 
+PARTITION BY RANGE_N  (
+   OrderDate BETWEEN DATE '2010-01-01' AND '2016-12-31' EACH INTERVAL '1' DAY
+);
+
+
+--Paste your source SQL here
+CREATE MULTISET TABLE EMPLOYEE ,FALLBACK , 
+   NO BEFORE JOURNAL, 
+   NO AFTER JOURNAL, 
+   CHECKSUM = DEFAULT, 
+   DEFAULT MERGEBLOCKRATIO,
+   BLOCKCOMPRESSION = ALWAYS
+   (
+      EmployeeNo INTEGER TITLE 'Employee Number' NOT NULL,
+      FirstName VARCHAR(30) CHARACTER SET LATIN NOT CASESPECIFIC TITLE 'First Name' COMPRESS ('John',''), 
+      LastName VARCHAR(30) CHARACTER SET LATIN NOT CASESPECIFIC TITLE 'Last Name' COMPRESS ('Boilerplate_content',''), 
+      DOB DATE FORMAT 'YYYY-MM-DD' TITLE 'Date of Birth' COMPRESS , 
+      JoinedDate DATE FORMAT 'YYYY-MM-DD' TITLE 'Join Date' COMPRESS , 
+      DepartmentNo BYTEINT,
+FOREIGN KEY (EmployeeNo) REFERENCES SALARY(EmployeeNo)) 
+PRIMARY INDEX UPI_EMPLOYEE(EmployeeNo);
+
+
+https://cloud.google.com/bigquery/docs/quickstarts/quickstart-command-line
+
+
+$gcloud config list 
+
+$bq ls 
+
+$bq ls dataset
+
+$bq ls datamart
+
+$bq show PROJECT_ID:DATASET_ID.TABLE_ID
+
+C:\Users\anjai>bq show iwinner-data:datamart.datamart_report_tabb
+Table iwinner-data:datamart.datamart_report_tabb
+
+   Last modified           Schema           Total Rows   Total Bytes   Expiration       Time Partitioning       Clustered Fields   Labels
+ ----------------- ----------------------- ------------ ------------- ------------ --------------------------- ------------------ --------
+  17 Jan 18:06:55   |- procdss_data: date   32           872                        DAY (field: procdss_data)
+                    |- Title: string
+                    |- Tags: string
+					
+
+
+Note: 
+In the Cloud Console and the client libraries, standard SQL is the default.
+In the bq command-line tool and the REST API, legacy SQL is the default.
+bq query --use_legacy_sql=false "select * from `iwinner-data.staging.no_partition` "
+
+
+bq query --use_legacy_sql=false "select * from `iwinner-data.datamart.datamart_report_tabb` where procdss_data='2021-01-21' "
+bq query "select * from [iwinner-data:staging.no_partition] "
+
+In legacy SQL: Use square brackets to start and end the table name, and use a colon (:) to delimit dataset and table names:
+[bigquery-public-data:samples:natality]
+
+
+In standard SQL: Use the backtick character (`) to start and end the table name, and use the period character (.) to delimit dataset and table names:
+Copy
+`bigquery-public...
+
+
+
+#Create dataset 
+bq mk babynames
+
+#Upload (Load)
+bq load babynames.names2010 yob2010.txt name:string,gender:string,count:integer
+
+bq --location=location load \
+--source_format=format \
+dataset.table \
+path_to_source \
+schema
+
+bq load \
+	--source_format=CSV \
+	--skip_leading_rows=2
+	mydataset.mytable \
+	gs://mybucket/mydata.csv \
+	./myschema.json
+
+bq load \
+	--source_format=CSV \
+	--time_partitioning_type=DAY \
+	mydataset.mytable \
+	gs://mybucket/mydata.csv \
+	./myschema.json
+
+
+bq load babynames.names2010 yob2010.txt name:string,gender:string,count:integer
+
+#Show query 
+bq query --use_legacy_sql=false "select * from iwinner-data.babynames.names2010 "
+
+
+
+bq show babynames.names2010
+
+Run the following command 
+bq query "SELECT name,count FROM babynames.names2010 WHERE gender = 'F' ORDER BY count DESC LIMIT 5"
+
+https://cloud.google.com/bigquery/docs/managing-table-schemas#bq
+bq show \
+--schema \
+--format=prettyjson \
+examples.gbpusd_201401p >gs://iwinner-dataproc/bigquery/personDataSchema.json
+
+
+bq show --schema --format=prettyjson iwinner-data:examples.gbpusd_201401p personDataSchema.json
+
+
+bq query --use_legacy_sql=false "select * from `iwinner-data.staging.no_partition` "
+
+
+## Table Metadata:
+bq query --nouse_legacy_sql "SELECT * EXCEPT(is_typed)  FROM  `datamart.INFORMATION_SCHEMA.TABLES` "
+
+bq query --nouse_legacy_sql "SELECT * EXCEPT(is_typed)  FROM  `datamart.INFORMATION_SCHEMA.TABLES` "
+
+
+
+# Dataset 
+bq --location=US mk -d \
+--default_table_expiration 3600 \
+--description "This is my dataset." \
+mydataset
+
+# Dataset 
+bq --location=US mk -d \
+--default_table_expiration 3600 \
+--description "This is my dataset." \
+gcp_data_enginner
+
+# Table 
+bq mk -t \
+--expiration 2592000 \
+--schema //home/anjaiahsprcloud/bigquery_repo/us_states_new.json \
+--time_partitioning_field date \
+--time_partitioning_type DAY \
+--time_partitioning_expiration 86400  \
+--description "This is my partitioned table" \
+--label org:dev \
+iwinner-data:gcp_data_enginner.us_states_csv_partition
+"""
+[
+  {
+    "description": "quarter",
+    "mode": "NULLABLE",
+    "name": "name",
+    "type": "STRING"
+  },
+  {
+    "description": "sales representative",
+    "mode": "NULLABLE",
+    "name": "post_abbr",
+    "type": "STRING"
+  },
+  {
+    "description": "total sales",
+    "mode": "REQUIRED",
+    "name": "date",
+    "type": "DATE"
+  }
+]
+
+"""
+
+## Load data into Partition Table :
+bq load \
+--source_format=CSV \
+--skip_leading_rows=1 \
+iwinner-data:gcp_data_enginner.us_states_csv_partition \
+gs://cloud-samples-data/bigquery/us-states/us-states-by-date.csv \
+/home/anjaiahsprcloud/bigquery_repo/us_states_new.json
+
+
+
+## Load data (orc to bigquery)
+bq load \
+--source_format=ORC \
+--time_partitioning_field date \
+--time_partitioning_type DAY \
+iwinner-data:gcp_data_enginner.us_states_orc \
+gs://cloud-samples-data/bigquery/us-states/us-states.orc \
+/home/anjaiahsprcloud/bigquery_repo/us_states_new.json
+
+
+iwinner-data:gcp_data_enginner.us_states
+# Show table schema 
+bq show \
+--schema \
+--format=prettyjson \
+iwinner-data:staging.no_partition
+
+Output:
+[
+  {
+    "mode": "NULLABLE",
+    "name": "procdss_data",
+    "type": "DATE"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "Title",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "Tags",
+    "type": "STRING"
+  }
+]  
+
+
+# BQ table creation:
+bq query --use_legacy_sql=false   'CREATE TABLE gcp_data_enginner.example_table ( x INT64 ,    ds DATE) PARTITION BY ds'
+
+
+bq mk --time_partitioning_type=DAY \
+--time_partitioning_field=ts_column \
+--clustering_fields=column1,column2 \
+gcp_data_enginner.example_table2 "ts_column:TIMESTAMP,column1:INTEGER,column2:STRING"
+
+	
+	
+bq query --use_legacy_sql=false \
+  'CREATE TABLE gcp_data_enginner.example_table ( x INT64 ,    ds DATE) PARTITION BY ds
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2028-01-01 00:00:00 UTC",
+  description="Example table create in BQ CLI",
+  labels=[("example","summary")]
+);  '
+
+
+bq query --use_legacy_sql=false \
+  'CREATE TABLE gcp_data_enginner.example_table_one ( x INT64 ,    ds DATE) PARTITION BY ds
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2028-01-01 00:00:00 UTC",
+  description="Example table create in BQ CLI",
+  labels=[("example","summary")]
+); '
+
+bq query --use_legacy_sql=false \  
+' CREATE TABLE gcp_data_enginner.example_table
+(
+  x INT64 OPTIONS(description="An optional INTEGER field"),
+  y STRUCT<
+    a ARRAY<STRING> OPTIONS(description="A repeated STRING field"),
+    b BOOL
+  >
+)
+PARTITION BY _PARTITIONDATE
+OPTIONS(
+  expiration_timestamp=TIMESTAMP "2025-01-01 00:00:00 UTC",
+  partition_expiration_days=1,
+  description="a table that expires in 2025, with each partition living for 24 hours",
+  labels=[("org_unit", "development")]
+)
+'
+
+bq query --use_legacy_sql=false " CREATE TABLE gcp_data_enginner.example_table (company STRING,  value FLOAT64,
+    ds DATE)
+PARTITION BY ds
+OPTIONS(
+  expiration_timestamp=TIMESTAMP '2028-01-01 00:00:00 UTC',
+  description="Example table create in BQ CLI",
+  labels=[("example","summary")]
+);"
+
+
+
+
+###################################
+
+Resources
+Time 
+
+Consumption
+Allocation
+RDBMS : tables are row-oriented 
+Bigquery tables are column-oriented (Columns): OLAP
+
+C:\Tech_Learn_welcome\Cloud_Tech_Learn\Google_Cloud\Bigdata_GCP\bigquery\professional-services\tools\bigquery-hive-external-table-loader
+${GCLOUD} auth activate-service-account --key-file ${HOME}/some/where/in/.server/mycredentials_bigquery.json
+BQ=$(which bq)
+for folder in ${IN_PATH}/*; do
+    if [[ -d ${folder} ]]; then
+        for file in ${folder}/*; do
+            if [[ -f ${file} ]]; then
+                GCP_FILE=${GCP_PATH}/$(basename ${folder})/$(basename ${file})
+                ${BQ} load --source_format=${FILE_FORMAT} ${BQ_TABLE} ${GCP_FILE} 2>&1 | tee ${LOG_FILE_BIGQUERY}
+            else
+                echo "(!!!) There is not file inside folder hierarcy!" 2>&1 | tee ${ERROR_FILE}
+                exit 1
+            fi
+        done
+    else
+        echo "(!!!) Folder hierarcy doesn't match!" 2>&1 | tee ${ERROR_FILE}
+        exit 1
+    fi
+done
+
+
+# Dataset 
+bq --location=US mk -d \
+--default_table_expiration 3600 \
+--description "This is my dataset." \
+gcp_data_welcome_enginner
+
+# Table 
+
+gsutil cp /home/anjaiahsprcloud/bigquery_repo/us_states_new.json gs://iwinner-dataproc/bigquery/
+
+
+# Table 
+bq mk -t \
+--expiration 2592000 \
+--schema /home/anjaiahsprcloud/bigquery_repo/us_states_new.json \
+--time_partitioning_field date \
+--time_partitioning_type DAY \
+--time_partitioning_expiration 86400  \
+--description "This is my partitioned table" \
+--label org:dev \
+iwinner-data:gcp_data_welcome_enginner.usa_states_partitions
+
+# List of all tables inside the dataset
+bq ls gcp_data_welcome_enginner
+
+# Show tables 
+bq show iwinner-data:gcp_data_welcome_enginner.usa_states_partitions
+
+# Load data into csv 
+
+bq load \
+--source_format=CSV \
+--skip_leading_rows=1 \
+iwinner-data:gcp_data_welcome_enginner.usa_states_partitions \
+gs://cloud-samples-data/bigquery/us-states/us-states-by-date.csv \
+/home/anjaiahsprcloud/bigquery_repo/us_states_new.json
+
+
+bq load \
+--source_format=CSV \
+--skip_leading_rows=1 \
+iwinner-data:gcp_data_welcome_enginner.usa_states_partitions \
+gs://cloud-samples-data/bigquery/us-states/us-states-by-date.csv \
+
+(OR) 
+bq load \
+--source_format=CSV \
+--skip_leading_rows=1 \
+iwinner-data:gcp_data_welcome_enginner.usa_states_partitions \
+gs://cloud-samples-data/bigquery/us-states/us-states-by-date.csv \
+/home/anjaiahsprcloud/bigquery_repo/us_states_new.json
+
+
+# Delete Table 
+bq rm \
+-f \
+-t \
+iwinner-data:gcp_data_welcome_enginner.usa_states_partitions 
+
+#DROP Table UI 
+DROP TABLE IF EXISTS ch04.college_scorecard_gcs
+
+## Copy
+bq cp \
+-a -f -n \
+iwinner-data:gcp_data_welcome_enginner.usa_states_partitions  \
+iwinner-data:gcp_data_welcome_enginner.usa_states_partitions_copy
+
+
+### Update expiration date
+bq update \
+--expiration 25920000 \
+iwinner-data:gcp_data_welcome_enginner.usa_states_partitions
+
+bq show iwinner-data:gcp_data_welcome_enginner.usa_states_partitions
+
+
+
+CREATE TABLE `categories` (
+	`category_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`category_department_id` INT(11) NOT NULL,
+	`category_name` VARCHAR(45) NOT NULL,
+	PRIMARY KEY (`category_id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+
+
+
+
+## categories
+bq mk -t \
+--expiration 2592000 \
+--schema /home/anjaiahsprcloud/categories.json \
+--time_partitioning_field process_date \
+--time_partitioning_type DAY \
+--time_partitioning_expiration 8640000  \
+--description "This is my partitioned table" \
+--label org:dev \
+iwinner-data:gcp_data_welcome_enginner.categories_partitions
+
+
+
+bq show iwinner-data:gcp_data_welcome_enginner.categories_partitions
+
+bq query --nouse_legacy_sql \
+'SELECT
+   *
+ FROM
+`iwinner-data`.gcp_data_welcome_enginner.categories_partitions'
+
+
+
+bq mkdef \
+    --source_format=PARQUET \
+    --hive_partitioning_mode=AUTO \
+    --hive_partitioning_source_uri_prefix=gs://{PROJECT_ID}/new-york-taxi-trips/yellow/2018/ \
+    gs://new-york-taxi-trips/yellow/2018/*.parquet > taxi-table-def
+	
+	
+
+
+Example 1:
+bq mkdef \
+    --source_format=PARQUET \
+    --hive_partitioning_mode=AUTO \
+    --hive_partitioning_source_uri_prefix=gs://iwinner-gcs-data/parquet-data/categories/ \
+    gs://iwinner-gcs-data/parquet-data/categories/*.parquet > taxi-table-def
+
+	
+bq mk --external_table_definition=taxi-table-def iwinner-data:gcp_data_welcome_enginner.categories_partitions_new
+
+bq mk --external_table_definition=taxi-table-def iwinner-data:gcp_data_welcome_enginner.categ_partitions	
+iwinner-data:gcp_data_welcome_enginner.categories_partitions_new
+
+Example 2:
+
+bq mkdef --autodetect --source_format=CSV  gs://iwinner-gcs-data/startup_data/*.csv > myschema
+bq mk --external_table_definition=myschema iwinner-data:gcp_data_welcome_enginner.startup_csv
+
+
+gs://iwinner-gcs-data/startup_data/50_Startups.csv
+
+
+bq mkdef \
+    --source_format=PARQUET \
+    --hive_partitioning_mode=AUTO \
+    --hive_partitioning_source_uri_prefix=gs://iwinner-gcs-data/parquet-data/categories/ \
+    gs://iwinner-gcs-data/parquet-data/categories/*.parquet > taxi-table-def
+
+
+
+## Apporach 2 
+bq mkdef \
+    --source_format=PARQUET \
+    --hive_partitioning_mode=AUTO \
+    --hive_partitioning_source_uri_prefix=gs://iwinner-gcs-data/parquet-data/categories/ \
+	gs://iwinner-gcs-data/parquet-data/categories/*.parquet > taxi-table-def
+
+	
+gsutil -m cp \
+    gs://bigquery-neos/bqstore/bq-flights-* \
+    gs://[BUCKET NAME]
+	
+SELECT * FROM `iwinner-data.bqtest.flights` LIMIT 10	
+
+
+SELECT * FROM `iwinner-data.bqtest.flights` LIMIT 10
+
+
+Example 3:
+----------------------------------
+
+Step1:
+
+gsutil -m cp \
+    gs://bigquery-neos/bqstore/* \
+    gs://iwinner-gcs-data/bigquery_flights/
+	
+Step2: 
+gs://iwinner-bigquery/bq-flights-*	
+
+iwinner-gcs-data/bigquery_flights/
+	
+bq mkdef --autodetect --source_format=CSV  gs://iwinner-gcs-data/bigquery_flights/bq-flights-* > flights_myschema	
+bq mk --external_table_definition=flights_myschema iwinner-data:gcp_data_welcome_enginner.flights
+
+bq query --nouse_legacy_sql \
+'SELECT
+   *
+ FROM
+   `iwinner-data.gcp_data_welcome_enginner.flights` LIMIT 1000'
+   
+SELECT * FROM `iwinner-data.gcp_data_welcome_enginner.flights` LIMIT 1000
+	
+bq query --nouse_legacy_sql \
+'SELECT
+   *
+ FROM
+   `iwinner-data`.gcp_data_welcome_enginner.categories_partitions_new'
+   
+
+bq query --nouse_legacy_sql \
+'SELECT
+   process_date,count(*) 
+ FROM
+   `iwinner-data`.gcp_data_welcome_enginner.categories_partitions_new group by process_date'
+   
+   
+gsutil cp gs://iwinner-gcs-data/parquet-data/categories/process_date=2021-01-17/* gs://iwinner-gcs-data/parquet-data/categories/process_date=2021-01-18/
+https://www.oreilly.com/library/view/google-bigquery-the/9781492044451/ch04.html
+
+### Insert into 
+
+
+# Table 
+bq mk -t \
+--expiration 2592000 \
+--schema /home/anjaiahsprcloud/bigquery_repo/us_states_new.json \
+--time_partitioning_field date \
+--time_partitioning_type DAY \
+--time_partitioning_expiration 86400  \
+--description "This is my partitioned table" \
+--label org:dev \
+iwinner-data:gcp_data_welcome_enginner.usa_states_partitions123
+
+
+bq query --nouse_legacy_sql \
+'SELECT
+   *
+ FROM
+   `iwinner-data`.gcp_data_welcome_enginner.usa_states_partitions'
+   
+   
+##  Count 
+
+bq query --nouse_legacy_sql \
+'SELECT
+   count(*)
+ FROM
+   `iwinner-data`.gcp_data_welcome_enginner.usa_states_partitions'
+   
+   
+ #!/bin/bash
+gcloud config set project myProject
+bq query --use_legacy_sql=false --destination_table=iwinner-data:gcp_data_welcome_enginner.usa_states_partitions123 \
+'SELECT
+  *
+ FROM
+  `iwinner-data`.gcp_data_welcome_enginner.usa_states_partitions'
+
+
+
+bq query --nouse_legacy_sql \
+'SELECT
+   *
+ FROM
+   `iwinner-data`.gcp_data_welcome_enginner.usa_states_partitions123'
+   
+## Insert Statement 
+bq mk -t \
+--expiration 2592000 \
+--schema /home/anjaiahsprcloud/bigquery_repo/us_states_new.json \
+--time_partitioning_field date \
+--time_partitioning_type DAY \
+--time_partitioning_expiration 86400  \
+--description "This is my partitioned table" \
+--label org:dev \
+iwinner-data:gcp_data_welcome_enginner.usa_states_partitions_insert
+
+bq query --nouse_legacy_sql \
+'INSERT `iwinner-data`.gcp_data_welcome_enginner.usa_states_partitions_insert (name,post_abbr,date)
+SELECT
+*
+FROM
+`iwinner-data`.gcp_data_welcome_enginner.usa_states_partitions123'   
+   
+
+## Not Working bq query :
+
+Use GUI UI
+INSERT `iwinner-data`.gcp_data_welcome_enginner.usa_states_partitions_insert (name,post_abbr,date)
+SELECT
+*
+FROM
+`iwinner-data`.gcp_data_welcome_enginner.usa_states_partitions123
+      

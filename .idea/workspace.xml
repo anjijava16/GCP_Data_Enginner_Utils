@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="904abd2c-8863-409a-a964-832b12e36399" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1xWNFcAbjW1wtCjWEAHAVzo3uPE" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DataEnginner_GCP/bigtable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Tech_Learn_welcome\Cloud_Tech_Learn\Google_Cloud\GCP_DataEnginner_Utils\DataEnginner_GCP\bigtable" />
+      <recent name="C:\Tech_Learn_welcome\Cloud_Tech_Learn\Google_Cloud\GCP_DataEnginner_Utils\DataEnginner_GCP\dataproc" />
+      <recent name="C:\Tech_Learn_welcome\Cloud_Tech_Learn\Google_Cloud\GCP_DataEnginner_Utils\DataEnginner_GCP\bigquery" />
+      <recent name="C:\Tech_Learn_welcome\Cloud_Tech_Learn\Google_Cloud\GCP_DataEnginner_Utils\DataEnginner_GCP\cloud_spanner" />
+      <recent name="C:\Tech_Learn_welcome\Cloud_Tech_Learn\Google_Cloud\GCP_DataEnginner_Utils\DataEnginner_GCP\Teradata_Bigquery_Migration" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="C:/Ingestion_ETL_Transformations/Spark-Structured-Streaming-Examples-master/Spark-Structured-Streaming-Examples-master" value="PREVIEW" />
+        <entry key="C:/Tech_Learn2/spark-structured-streaming-kafka-to-postgresql-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../sai_workspace_utils/Scala/generic-spark-ingestion" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../sai_workspace_utils/Scala/spark_scala_madhu_utils" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="904abd2c-8863-409a-a964-832b12e36399" name="Default Changelist" comment="" />
+      <created>1630466782008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630466782008</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,0 +1,178 @@
+
+>>
+gcloud beta bigtable instances create spikey-offers-dev \
+--cluster=spikey-offers-dev-c1 \
+--cluster-zone=us-central1-b \
+--display-name=spikey-offers-dev \
+--cluster-storage-type=SSD \
+--instance-type=DEVELOPMENT
+
+
+
+>> gcloud auth application-default login
+>> gcloud components update
+>> git clone https://github.com/GoogleCloudPlatform/cloud-bigtable-examples.git
+>> cd cloud-bigtable-examples/quickstart
+>> ./quickstart.sh
+
+[Inside Hbase:]
+
+>> list
+>> create 'customer_offers', 'customer_family','offer_family'  
+>> list
+>> put 'customer_offers', 'CG-12520_SS-WXP-0054R', 'customer_family:customer_id', 'CG-12520'
+>> put 'customer_offers', 'CG-12520_SS-WXP-0054R', 'customer_family:offer_text', '5% off on all Greeting cards'
+>> put 'customer_offers', 'CG-12520_SS-WXP-0054R', 'customer_family:offer_image', 'CARD5OFF'
+>> scan 'customer_offers'
+
+>> put 'customer_offers', 'CG-12520_SS-WXP-0054R', 'offer_family:offer_id', 'SS-WXP-0054R'
+>> put 'customer_offers', 'CG-12520_SS-WXP-0054R', 'offer_family:product_id', 'FUR-BO-10001798'
+>> put 'customer_offers', 'CG-12520_SS-WXP-0054R', 'offer_family:sale', 'End Of Season Sale'
+>> put 'customer_offers', 'CG-12520_SS-WXP-0054R', 'offer_family:discount', '60%'
+>> put 'customer_offers', 'CG-12520_SS-WXP-0054R', 'offer_family:buy_one_get_free', 'False'
+>> put 'customer_offers', 'CG-12520_SS-WXP-0054R', 'offer_family:end_timestamp', '2018-08-15T06:48:34-05:00'
+
+>> scan 'customer_offers'
+
+>> disable 'customer_offers'
+>> drop 'customer_offers'
+>> list
+>> exit
+>> cd ~
+
+
+
+>> gcloud components install cbt
+>> echo project = spikey-bigtable > ~/.cbtrc
+>> echo instance = spikey-offers-dev >> ~/.cbtrc
+>> nano ~/.cbtrc
+
+[ Ctrl + X on keyboard]
+
+>> cbt createtable customer_offers \
+ splits=CG-12520_SS-WXP-0054R,AA-10480_SS-WXP-0012R,KB-16585_SS-WXP-0036R
+>> cbt ls
+>> cbt createfamily customer_offers offer_family
+>> cbt createfamily customer_offers customer_family
+>> cbt createfamily customer_offers product_family
+>> cbt ls customer_offers
+>> cbt deletefamily customer_offers product_family
+>> cbt ls customer_offers
+>> cbt setgcpolicy customer_offers offer_family maxversions=3
+>> cbt setgcpolicy customer_offers offer_family maxage=3d
+>> cbt setgcpolicy customer_offers customer_family maxversions=3
+>> cbt setgcpolicy customer_offers customer_family maxage=3d
+>> cbt ls customer_offers
+
+>> 
+cbt set customer_offers \
+CG-12520_SS-WXP-0054R offer_family:offer_id='SS-WXP-0054R', \
+offer_family:product_id='FUR-BO-10001798', \
+offer_family:sale='End Of Season Sale', \
+offer_family:discount='60%', \
+offer_family:buy_one_get_free='False', \
+offer_family:end_timestamp='2018-08-15T06:48:34-05:00'
+
+>> 
+cbt set customer_offers \
+AA-10480_SS-WXP-0012R offer_family:offer_id='SS-WXP-0012R', \
+offer_family:product_id='OFF-PA-10002365', offer_family:sale='Black Friday Week', \
+offer_family:discount='20%', offer_family:buy_one_get_free='True', \
+offer_family:end_timestamp='2018-11-17T18:33:40-05:00'
+
+>> 
+cbt set customer_offers \
+KB-16585_SS-WXP-0036R offer_family:offer_id='SS-WXP-0036R', \
+offer_family:product_id='OFF-AR-10000246', offer_family:sale='The Big Brand Sale', \
+offer_family:discount='50%', offer_family:buy_one_get_free='True', \
+offer_family:end_timestamp='2018-04-25T20:20:51-05:00'
+
+>> cbt read customer_offers
+>> cbt deleterow customer_offers KB-16585_SS-WXP-0036R
+>> cbt read customer_offers
+
+>> 
+cbt set customer_offers \
+CG-12520_SS-WXP-0054R customer_family:customer_id='CG-12520', \
+customer_family:offer_text='5% off on all Greeting cards', \
+customer_family:offer_image='CARD5OFF'
+
+>>
+cbt set customer_offers \
+AA-10480_SS-WXP-0012R customer_family:customer_id='AA-10480', \
+customer_family:offer_text='20% off on all Kitchen appliances valid only on Friday', \
+customer_family:offer_image='FRI20'
+
+>> cbt read customer_offers
+>> nano ~/.cbtrc
+>> cbt ls
+
+
+>> cbt read customer_offers
+>> cbt ls customer_offers
+>> gsutil mb gs://spikey_offers_repository
+>> 
+curl -f -O http://repo1.maven.org/maven2/com/google/cloud/bigtable/bigtable-beam-import/1.5.0/bigtable-beam-import-1.5.0-shaded.jar
+
+>> 
+java -jar bigtable-beam-import-1.5.0-shaded.jar export \
+--runner=dataflow \
+--project=spikey-bigtable \
+--bigtableInstanceId=spikey-offers-dev \
+--bigtableTableId=customer_offers \
+--destinationPath=gs://spikey_offers_repository/customer_offers \
+--tempLocation=gs://spikey_offers_repository/jar-temp \
+--maxNumWorkers=20 \
+--zone=us-east1-c
+
+[Accessing the part-00001-of-00002 from Google Cloud Stoage]
+
+>> gsutil cat gs://spikey_offers_repository/customer_offers/part-00001-of-00002
+
+
+>> cbt createtable spikey_offers_table
+>> cbt createfamily spikey_offers_table offer_family
+>> cbt createfamily spikey_offers_table customer_family
+>> cbt setgcpolicy spikey_offers_table offer_family maxversions=3
+>> cbt setgcpolicy spikey_offers_table offer_family maxage=3d
+>> cbt setgcpolicy spikey_offers_table customer_family maxversions=3
+>> cbt setgcpolicy spikey_offers_table customer_family maxage=3d
+>> cbt ls spikey_offers_table
+>>
+curl -f -O http://repo1.maven.org/maven2/com/google/cloud/bigtable/bigtable-beam-import/1.5.0/bigtable-beam-import-1.5.0-shaded.jar
+>> 
+java -jar bigtable-beam-import-1.5.0-shaded.jar import \
+--runner=dataflow \
+--project=spikey-bigtable \
+--bigtableInstanceId=spikey-offers-dev \
+--bigtableTableId=spikey_offers_table \
+--sourcePattern='gs://spikey_offers_repository/customer_offers/part-*' \
+--tempLocation=gs://spikey_offers_repository/jar-temp \
+--maxNumWorkers=9 \
+--zone=us-east1-c
+>> cbt count spikey_offers_table 
+>> cbt read spikey_offers_table
+>> cbt deletetable spikey_offers_table
+>> cbt deletetable customer_offers
+>> cbt ls
+
+
+>> datalab create spikey-bigtable-datalab --zone us-central1-b
+
+[Run "BasicCRUDforProductCatalog" notebook]
+
+>> cbt read product_catalog
+>> cbt ls
+
+
+
+
+
+[Run "BasicCRUDforSpikeyCustomerDetails" notebook]
+
+
+[Run "spikey-visualize-notebook" notebook]
+
+
+[Run "SpikeyMetricScaler" notebook]
+

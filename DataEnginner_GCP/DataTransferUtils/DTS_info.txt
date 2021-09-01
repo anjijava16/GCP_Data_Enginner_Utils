@@ -1,0 +1,137 @@
+gsutil acl ch -u iwinner-data@western-beanbag-309713.iam.gserviceaccount.com:W gs://iwinner-td-bigquery
+
+https://towardsdatascience.com/a-gentle-introduction-to-the-5-google-cloud-bigquery-apis-aafdf4ef0181
+C:\Tech_Learn_welcome\Cloud_Tech_Learn\keys_clouds
+
+java -cp mirroring-agent.jar com.google.cloud.bigquery.dms.Agent --initialize Would you like to write the default TPT template to disk? (yes/no): no
+
+set GOOGLE_APPLICATION_CREDENTIALS=C:\Tech_Learn_welcome\Cloud_Tech_Learn\keys_clouds\welcome-bigquery-load-a3fc4eb9d6bd.json
+
+gcloud config set project welcome-bigquery-load 
+gs://welcome-iwinner-bqload
+
+C:\Tech_Learn_welcome\Cloud_Tech_Learn\keys_clouds\welcome.txt
+ 
+bq show --format=prettyjson --transfer_config projects/48421311153/locations/us/transferConfigs/612c87b1-0000-2b50-ae13-f40304366008
+
+bq show \
+--format=prettyjson \
+--transfer_config projects/myproject/locations/us/transferConfigs/1234a123-1234-1a23-1be9-12ab3c456de7
+
+
+
+https://cloud.google.com/bigquery-transfer/docs/teradata-migration
+https://cloud.google.com/bigquery-transfer/docs/data-warehouse-migration-overview
+
+https://cloud.google.com/bigquery-transfer/docs/introduction#supported_data_sources
+
+bq mk \
+--transfer_config \
+--project_id=welcome-bigquery-load \
+--target_dataset=welcome \
+--display_name='welcomebigqueryloadnewtime' \
+--params='{"bucket": "welcome-iwinner-bqload", "database_type": "Teradata",
+"database_name":"mydatabase", "table_name_patterns": "abc","schedule":"none",
+"agent_service_account":"welcome-bigqueryload@welcome-bigquery-load.iam.gserviceaccount.com"}' \
+--data_source=on_premises
+
+bq show --transfer_config projects/xxx/locations/us/transferConfigs/5ec51e3f-0000-28d1-b7cb-001a1144683e
+
+
+ 
+ .setDisplayName("Your Teradata Config Name")
+            .setDataSourceId("on_premises")
+            .setParams(Struct.newBuilder().putAllFields(params).build())
+            .setSchedule("every 24 hours")
+            .build();
+ bq mk \
+--transfer_config \
+--project_id=welcome-bigquery-load \
+--target_dataset=welcome \
+--display_name='welcomebigqueryload' \
+--params='{"bucket": "welcome-iwinner-bqload", "database_type": "Teradata",
+"database_name":"mydatabase", "table_name_patterns": "abc",
+"agent_service_account":"welcome-bigqueryload@welcome-bigquery-load.iam.gserviceaccount.com", "schema_file_path":
+"gs://mybucket/myschemafile.json"}' \
+--data_source=on_premises
+
+
+Enter Data Transfer config display name: welcome_bq_load
+Exception in thread "main" com.google.cloud.bigquery.dms.common.exceptions.AgentException: Agent does not have sufficient permissions. Please make sure that agent service account has BigQuery Admin and Storage Object Admin permissions for project welcome-bigquery-load
+        at com.google.cloud.bigquery.dms.gcloud.TransferServiceClient.createTransferConfig(TransferServiceClient.java:221)
+        at com.google.cloud.bigquery.dms.gcloud.TransferServiceClient.createOnDemandTeradataTransfer(TransferServiceClient.java:210)
+        at com.google.cloud.bigquery.dms.AgentUserInputHandler.createTransferConfiguration(AgentUserInputHandler.java:228)
+        at com.google.cloud.bigquery.dms.AgentUserInputHandler.getTransferConfiguration(AgentUserInputHandler.java:83)
+        at com.google.cloud.bigquery.dms.Agent.initializeAgent(Agent.java:344)
+        at com.google.cloud.bigquery.dms.Agent.main(Agent.java:185)
+Caused by: com.google.api.gax.rpc.PermissionDeniedException: io.grpc.StatusRuntimeException: PERMISSION_DENIED: BigQuery Data Transfer API has not been used in project 48421311153 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/bigquerydatatransfer.googleapis.com/overview?project=48421311153 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+        at com.google.api.gax.rpc.ApiExceptionFactory.createException(ApiExceptionFactory.java:55)
+        at com.google.api.gax.grpc.GrpcApi
+		
+		
+		
+		
+Issues:
+  Project should be owner role
+  Storage admin role 
+  Bigquery admin role
+  BQ Transfer service enable 
+  
+C:\Tech_Learn_welcome\Cloud_Tech_Learn\Google_Cloud\Bigdata_GCP\DTS>java -cp mirroring-agent.jar com.google.cloud.bigquery.dms.Agent --initialize
+Reading data from gs://data_transfer_agent/latest/version
+Would you like to write the default TPT template to disk? (yes/no): no
+Enter directory path for locally extracted files:
+Enter Database hostname: ^ZException in thread "main" java.util.NoSuchElementException: No line found
+        at java.util.Scanner.nextLine(Unknown Source)
+        at com.google.cloud.bigquery.dms.AgentUserInputHandler.getUserInput(AgentUserInputHandler.java:382)
+        at com.google.cloud.bigquery.dms.AgentUserInputHandler.getConnectionConfiguration(AgentUserInputHandler.java:320)
+        at com.google.cloud.bigquery.dms.Agent.initializeAgent(Agent.java:339)
+
+C:\Tech_Learn_welcome\Cloud_Tech_Learn\Google_Cloud\Bigdata_GCP\DTS>java -cp mirroring-agent.jar com.google.cloud.bigquery.dms.Agent --initialize
+Reading data from gs://data_transfer_agent/latest/version
+Would you like to write the default TPT template to disk? (yes/no): no
+Enter directory path for locally extracted files: C:\temp
+Enter Database hostname: ds
+Enter Database connection port (press enter to use default port):
+Would you like to use Teradata Parallel Transporter (TPT) to unload data? (yes/no): yes
+Enter database credentials file path: C:\Tech_Learn_welcome\Cloud_Tech_Learn\keys_clouds\welcome.txt
+Enter BigQuery Data Transfer Service config name (press enter to create new transfer config):
+        NOTE: Please make sure Credential Minter permission is granted to Bigquery Data TransferService Account. If not please grant the permission with the following command:
+                gcloud projects add-iam-policy-binding <PROJECT_ID> --member='serviceAccount:service-<project_number>@gcp-sa-bigquerydatatransfer.iam.gserviceaccount.com' --role='roles/iam.serviceAccountShortTermTokenMinter'
+Enter Google Cloud Project Id of destination database: welcome-bigquery-load
+Enter Source Teradata database name: welcomeds
+Enter table name patterns separated by semicolon(;)
+        (NOTE:Every pattern is a regular expression for table(s) to migrate.): ds
+Enter path to schema file (press enter to skip):
+Would you like to create schema file for BigQuery tables (yes/no): no
+Enter Cloud Storage bucket (NOTE: bucket's location should match BigQuery dataset.): gs://welcome-iwinner-bqload
+Enter destination Bigquery dataset (NOTE: dataset should exist in project): welcome
+Enter Data Transfer config display name: welcomebqload
+        Successfully created transfer config: projects/48421311153/locations/us/transferConfigs/60e9e32e-0000-28ec-a952-94eb2c0c064a
+Enter configuration file path: C:\Tech_Learn_welcome\Cloud_Tech_Learn\keys_clouds\bq_output.json
+Configuration file successfully created!
+
+C:\Tech_Learn_welcome\Cloud_Tech_Learn\Google_Cloud\Bigdata_GCP\DTS>
+
+
+
+CLI apporach:
+bq mk \
+--transfer_config \
+--project_id=welcome-bigquery-load \
+--target_dataset=welcome \
+--display_name='welcomebigqueryloadnewtime' \
+--params='{"bucket": "welcome-iwinner-bqload", "database_type": "Teradata",
+"database_name":"mydatabase", "table_name_patterns": "abc","schedule":"On-demand",
+"agent_service_account":"welcome-bigqueryload@welcome-bigquery-load.iam.gserviceaccount.com"}' \
+--data_source=on_premises
+
+
+https://developers.google.com/resources/api-libraries/documentation/bigquerydatatransfer/v1/java/latest/index.html?com/google/api/services/bigquerydatatransfer/v1/model/TransferConfig.html
+
+
+google-cloud-bigquery-datatransfer
+https://stackoverflow.com/questions/60236489/create-adwords-bigquery-transfer-with-python-bigquery-datatransfer-error-400-re
+https://github.com/googleapis/python-bigquery-datatransfer/blob/master/google/cloud/bigquery_datatransfer_v1/__init__.py
+https://github.com/googleapis/python-bigquery-datatransfer
+https://airflow.apache.org/docs/apache-airflow-providers-google/stable/operators/cloud/bigquery_dts.html#creating-transfer-configuration

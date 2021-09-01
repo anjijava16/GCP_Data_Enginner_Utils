@@ -1,0 +1,151 @@
+Module 2
+
+Demo 1
+Switch Project,Enabling API, Introducing UI, Command Line - set project
+
+Module 3
+
+Demo 1
+https://codelabs.developers.google.com/codelabs/cpb102-creating-dataproc-clusters/#5
+
+
+Create cluster spikey-cluster-one
+ssh into master node
+print out versions of java,python,pyspark,pig and hive
+hadoop fs -ls /
+
+configuring firewall rules for access
+https://codelabs.developers.google.com/codelabs/cpb102-creating-dataproc-clusters/#4
+
+
+
+Demo 2
+Using the hadoop fs command line to initialize files for processing & Running a mapreduce job
+
+Create bucket
+Create folder mapr_scripts and mapr_input
+Upload code and data
+
+ssh into masternode
+
+hadoop fs -ls /
+
+hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar \
+    -files gs://cloud-ml-api/mapr_scripts/mapper.py,gs://cloud-ml-api/mapr_scripts/reducer1.py \
+    -mapper 'python mapper.py' \
+    -reducer 'python reducer.py' \
+    -input gs://cloud-ml-api/mapr_input/itemData.txt \
+    -output gs://cloud-ml-api/mapr_output
+
+hdfs dfs -cat gs://cloud-ml-api/mapr_output/part-00000
+hdfs dfs -cat gs://cloud-ml-api/mapr_output/part-00001
+
+Demo 3
+Premptible VMs
+https://cloud.google.com/dataproc/docs/concepts/compute/preemptible-vms#using_preemptibles_in_a_cluster
+
+Create a cluster from command line
+
+gcloud dataproc clusters create spikey-cluster-two 
+		--num-preemptible-workers 2 --zone us-central1-a \
+        --master-machine-type n1-standard-1 --master-boot-disk-size 50 \
+        --num-workers 2 --worker-machine-type n1-standard-1 \
+        --worker-boot-disk-size 50 
+
+gcloud dataproc clusters update spikey-cluster-two --num-preemptible-workers 0
+
+gcloud dataproc clusters delete spikey-cluster-two
+
+Demo 4
+Monitoring your jobs on the Cloud Console with Stackdriver
+
+https://cloud.google.com/dataproc/docs/guides/stackdriver-monitoring
+Resource -dataproc
+MEtric : yarn memeory size
+Filter cluster name
+
+Module 4
+
+Demo 1
+https://github.com/GoogleCloudPlatform/dataproc-initialization-actions
+
+You need to configure Stackdriver before you use this initialization action. Specifically, you must create a group based on the cluster name prefix of your cluster. Once you do, Stackdriver will detect any new instances created with that prefix and use this group as the basis for your alerting policies and dashboards. You can create a new group through the Stackdriver user interface.
+
+gcloud dataproc clusters create spikey-cluster-two \
+    --project spikey-developers \
+    --initialization-actions \
+        gs://dataproc-initialization-actions/stackdriver/stackdriver.sh \
+    --scopes https://www.googleapis.com/auth/monitoring.write \
+    --tags my-dataproc-cluster-20160901-1518
+
+Go to stackdriver and check group
+
+Add an alerting policy
+
+Demo 2
+https://cloud.google.com/dataproc/docs/tutorials/bigquery-connector-spark-example
+
+Create spikeysales-dataset
+
+Create table and load data from csv with schema auto detetction
+
+gcloud dataproc jobs submit pyspark totalcost.py --cluster spikey-cluster-two
+
+Demo 3
+
+Go to stackdriver and check group
+
+Add chart
+
+Resource -dataproc
+Metric : Submitted jobs/running job
+Filter py spark job
+
+
+Module 5
+Demo 1
+
+Show txt file
+
+Create bucket folder and upload txt file
+
+Submit job
+
+gcloud dataproc jobs submit pig --cluster spikey-cluster-one \
+      -e "x1 = LOAD 'gs://cloud-ml-api/pig_input/itemdetails.txt' using PigStorage(',') AS (Type:chararray,Name:chararray,RetailPrice:float,DiscountPrice:float,Brand:chararray)" \
+      -e "GROUPS = GROUP x1 BY Type" \
+      -e "DUMP GROUPS"
+View in jobs
+Go to cloud shell editor
+file>>New>>itemdiscounts.pig
+
+x1 = load 'gs://cloud-ml-api/pig_input/itemdetails.txt' using PigStorage(',') AS (Type:chararray,Name:chararray,RetailPrice:float,DiscountPrice:float,Brand:chararray);
+x2 = filter x1 by Type != 'Type';
+x3 = foreach x2 generate Type, Name, RetailPrice, DiscountPrice, Brand, RetailPrice/DiscountPrice AS Off:float;
+x4 = filter x3 by LOWER(Brand) == 'nike' or LOWER(Brand) == 'puma';
+x5 = group x4 by Type;
+store x5 into 'gs://cloud-ml-api/pig_output/';
+
+gcloud dataproc jobs submit pig --cluster spikey-cluster-one \
+      --file itemdiscounts.pig
+
+Go to bucket and see ouptut
+
+gsutil cat gs://cloud-ml-api/pig_output/part-r-00000
+
+
+Demo 2
+ssh into master node
+hive
+
+CREATE TABLE IF NOT EXISTS items ( type String, name String,
+retailprice float,discountprice float, brand String)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+LOAD DATA INPATH 'gs://cloud-ml-api/input/itemdetails.txt'
+OVERWRITE INTO TABLE items;
+
+SELECT * FROM items;
